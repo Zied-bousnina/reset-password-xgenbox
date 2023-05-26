@@ -24,7 +24,7 @@ function Form() {
 
   const verifyToken=async ()=> {
     try {
-    const {data} = await axios(`${API_BASE_URL}/verify-token?token=${token}&id=${id}`)
+    const {data} = await axios(`${API_BASE_URL}/users/verify-token?token=${token}&id=${id}`)
     setBusy(false)
 
   } catch (error) {
@@ -71,7 +71,7 @@ function Form() {
 
     try {
       setBusy(true)
-    const {data} = await axios.post(`${API_BASE_URL}/reset-password?token=${token}&id=${id}`, {password})
+    const {data} = await axios.post(`${API_BASE_URL}/users/reset-password?token=${token}&id=${id}`, {password})
     setBusy(false)
     console.log(data)
     
